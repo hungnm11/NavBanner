@@ -21,9 +21,12 @@
             function myFunc() {
                 var imgPos = - (y * heightPhoto);
                 if (y < numberVisible) {
+                    itemsThumb.removeClass("active-nav");
+                    console.log(itemsThumb.eq(y).addClass("active-nav"));
                     containerPhoto.find(".swiper-wrapper").css({
                         top: imgPos + "px",
                     });
+                    
                     y++;
                 } else {
                     y = 0;
