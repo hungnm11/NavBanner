@@ -18,25 +18,33 @@
             
             exSubMenu();
 
-            function myFunc() {
-                console.log("hello");
-            }
             
+            
+            function myFunc() {
+                var imgPos = - (y * heightPhoto);
+                if (y < numberVisible) {
+                    containerPhoto.find(".swiper-wrapper").css({
+                        top: imgPos + "px",
+                    });
+                    y++;
+                } else {
+                    y = 0;
+                }
+                
+            }
             
             var init = setInterval(myFunc, interValSecs);
             
-            
-            
-            
             itemsThumb.on({
                 mouseenter: function() {
+
                     var imgPos = - ($(this).index() * heightPhoto) ;
-                    console.log(imgPos);
                  
                     containerPhoto.find(".swiper-wrapper").css({
                         top: imgPos + "px",
                     });
                     clearInterval(init);
+                    
                 },
                 mouseleave: function() {
                     init = setInterval(myFunc, interValSecs);
