@@ -1,0 +1,104 @@
+@media (max-width: @screen-xs-max) {
+    body {
+        font-family: @font-family-arial;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.border(@width: 1px, @style: solid, @color:@color-templete) {
+		border: @width @style @color;
+	}
+	
+	#header-navigation {
+		 width: 100%;
+		.header-menu {
+			padding: @padding+7;
+//			background: #4fb6f7;
+		}
+		
+		.all-menu {
+			.fa {
+				color: #4fb6f7;	
+				&:after {
+					content: "Tiki.vn";
+					font-family: 'Open Sans', sans-serif;
+					margin-left: 10px;
+					font-weight: bold;
+				}
+			}
+			
+			h2 {
+				display: none;
+			}
+		}
+		
+		.list-group {
+		  left: -285px;  /* start off behind the scenes */
+		  height: 100%;
+		  position: fixed;
+		  width: 285px;
+		}
+		
+		.list-group ul {
+		  border-top: 1px solid #636366;
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+		}
+
+		.list-group li {
+		  border-bottom: 1px solid #636366;
+		  font-family: 'Open Sans', sans-serif;
+		  line-height: 45px;
+		  padding-bottom: 3px;
+		  padding-left: 20px;
+		  padding-top: 3px;
+		}
+
+		.list-group a {
+		  color: #fff;
+		  font-size: 15px;
+		  text-decoration: none;
+		  text-transform: uppercase;
+		}
+
+		
+		
+		.list-group {
+			margin: 0;
+			padding: 0;
+			background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+			left: -285px;  /* start off behind the scenes */
+			height: 100%;
+			position: fixed;
+			width: 285px;
+			.list-group-item {
+				list-style: none;
+				background: #ccc;
+				a {
+					.fa {
+						display: none;
+					}
+					span {
+						font: 14px;
+						color: @white;
+					}
+				}
+				.nav-sub {
+					display: none;
+				}
+			}
+		}
+	}
+	
+   .clearfix {
+	   clear: both;
+   }
+	
+	*, :after, :before {
+		-ms-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}

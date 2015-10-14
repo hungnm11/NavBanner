@@ -17,7 +17,8 @@
             var interValSecs = 3000;
             
             exSubMenu();
-
+			
+			
 			function myFunc() {
                 var imgPos = - (y * heightPhoto);
                 if (y < numberVisible) {
@@ -51,8 +52,44 @@
                     init = setInterval(myFunc, interValSecs);
                 }
             });
+			
+			// load() event and resize() event are combined 
+   			$(window).ready(responsiveFn).resize(responsiveFn);
+			
 		});
         
+		function responsiveFn() {
+			width = $( window ).width();
+			height = $( window ).height();
+
+			// Do a custom code here
+
+			if(width >= 992 && width <= 1199){
+				$(".all-menu").on({
+					click: function() {
+						$(".list-group").toggle();
+					}
+				});
+			} else if (width >= 768 && width <= 991) {
+				$(".all-menu").on({
+					click: function() {
+						$(".list-group").toggle();
+					}
+				});
+			} else if( width <= 767) {
+				var dir = -285;
+				
+				$(".all-menu").click(function() {
+					dir = dir === 0 ? -285 : 0;
+					console.log(dir);
+					$('.list-group').stop().animate({
+					  left: dir
+					}, 200);
+				});
+			}
+			
+		 }
+		
 		function exSubMenu() {
 			$(".list-group-item").on("mouseover", function() {
 				var $li = $(this);
