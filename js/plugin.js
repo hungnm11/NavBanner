@@ -17,9 +17,7 @@
             var interValSecs = 3000;
             
             exSubMenu();
-
-            
-            
+            console.log(items);
             function myFunc() {
                 var imgPos = - (y * heightPhoto);
                 if (y < numberVisible) {
