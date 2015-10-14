@@ -14,7 +14,7 @@
             var containerHeight = 0;
             var numberVisible = $(".swiper-container-vertical > .swiper-wrapper > *").length;
             var heightPhoto = $(".swiper-container-vertical .swiper-slide img").height();
-            var interValSecs = 1000;
+            var interValSecs = 3000;
             
             exSubMenu();
 

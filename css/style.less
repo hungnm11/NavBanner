@@ -335,6 +335,8 @@
 						padding: 0;
 						margin: 0;
 					}
+                    
+                    
 					&:hover {
 						background: #fff;
 						&:before {
@@ -363,7 +365,33 @@
 						}
 					}
 				}
-				
+				.active-nav {
+                        background: #fff;
+						&:before {
+							right: 100%;
+							top: 49%;
+							border: solid transparent;
+							content: " ";
+							height: 0;
+							width: 0;
+							position: absolute;
+							border-color: transparent #ccc transparent transparent;
+							border-width: 10px;
+							margin-top: -8px
+						}
+						&:after {
+							right: 100%;
+							top: 49%;
+							border: solid transparent;
+							content: " ";
+							height: 0;
+							width: 0;
+							position: absolute;
+							border-color: transparent #fff transparent transparent;
+							border-width: 9px;
+							margin-top: -7px;
+						}
+                    }
 			}
 			
 //			.swiper-container {
