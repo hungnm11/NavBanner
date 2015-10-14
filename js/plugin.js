@@ -17,45 +17,42 @@
             var interValSecs = 3000;
             
             exSubMenu();
-            console.log(items);
-            function myFunc() {
+
+			function myFunc() {
                 var imgPos = - (y * heightPhoto);
                 if (y < numberVisible) {
                     itemsThumb.removeClass("active-nav");
-                    console.log(itemsThumb.eq(y).addClass("active-nav"));
+                    itemsThumb.eq(y).addClass("active-nav");
                     containerPhoto.find(".swiper-wrapper").css({
                         top: imgPos + "px",
                     });
-                    
                     y++;
                 } else {
                     y = 0;
                 }
-                
             }
             
+			//Autoplay
             var init = setInterval(myFunc, interValSecs);
             
+			// Mouseover and mouseout
             itemsThumb.on({
                 mouseenter: function() {
-
                     var imgPos = - ($(this).index() * heightPhoto) ;
                     itemsThumb.removeClass("active-nav");
+					itemsThumb.eq($(this).index()).addClass("active-nav");
+					y = $(this).index();
                     containerPhoto.find(".swiper-wrapper").css({
                         top: imgPos + "px",
                     });
                     clearInterval(init);
-                    
                 },
                 mouseleave: function() {
                     init = setInterval(myFunc, interValSecs);
                 }
-                
             });
-		
 		});
         
-		
 		function exSubMenu() {
 			$(".list-group-item").on("mouseover", function() {
 				var $li = $(this);
