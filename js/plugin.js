@@ -39,7 +39,7 @@
                 mouseenter: function() {
 
                     var imgPos = - ($(this).index() * heightPhoto) ;
-                 
+                    itemsThumb.removeClass("active-nav");
                     containerPhoto.find(".swiper-wrapper").css({
                         top: imgPos + "px",
                     });
